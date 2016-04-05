@@ -1,29 +1,23 @@
 import React from 'react';
 import store from '../store/store';
-import {loadRepository} from '../store/actions';
+import {addUser, loadRepository} from '../store/actions';
 import MensajeCommit from './mensaje-commit';
 
 class ListaMensajesCommit extends React.Component {
     constructor(props) {
         super(props);
-
-        let data = store.getState(),
-            commits;
-        
-        if(data[this.props.username])
-            commits = data[this.props.username][this.props.repo]; 
-
-        this.state = {history: commits ? commits : []};
+        this.state = {history: []};
         this.updateRepo = this.updateRepo.bind(this);
     }
 
     componentDidMount() {
+        store.dispatch(addUser(this.props.params.username));
         this.unsubscribe = store.subscribe(this.updateRepo);
-        store.dispatch(loadRepository(this.props.username, this.props.repo));
+        store.dispatch(loadRepository(this.props.params.username, this.props.params.repository));
     }
 
     componentWillReceiveProps(newProps) {
-        store.dispatch(loadRepository(newProps.username, newProps.repo));
+        store.dispatch(loadRepository(newProps.params.username, newProps.params.repository));
     }
 
     componentWillUnmount() {
@@ -31,17 +25,18 @@ class ListaMensajesCommit extends React.Component {
     }
 
     updateRepo(history) {
-        let data = store.getState(),
-            commits;
+        let data = store.getState()[this.props.params.username];
+        if(data[this.props.params.repository])
+            data = data[this.props.params.repository];
+        else
+            data = [];
 
-        if(data[this.props.username])
-            commits = data[this.props.username][this.props.repo];
-        
-        this.setState({history: commits ? commits : []});
+        this.setState({history: [].concat(data)});
     }
 
     render() {
         return <ul className="repository">
+            <h1>Mostrando Commits Recientes en {this.props.params.username}/{this.props.params.repository}</h1>
             {this.state.history.map(function(commit, i) {
                 return <MensajeCommit commit={commit} key={i} />;
             })}

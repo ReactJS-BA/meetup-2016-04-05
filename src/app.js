@@ -1,35 +1,44 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {Router, Route, browserHistory} from 'react-router';
+import ListaRepos from './components/lista-repos';
 import ListaMensajesCommit from './components/lista-mensajes-commit';
+
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {username: 'ReactJS-BA', repo: 'meetup-2016-04-05'};
-        this.handleKeyEvent = this.handleKeyEvent.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleKeyEvent(e) {
-        if(e.key !== 'Enter')
-            return;
+    getChildContext() {
+        return {params: this.props.params};
+    }
 
-        var data = this.refs.input.value.split('/');
-        if(data.length !== 2)
-            return alert('Bad input.');
-
-        this.setState({
-            username: data[0],
-            repo: data[1]
-        });
+    handleSubmit(e) {
+        e.preventDefault();
+        let username = this.refs.input.value;
+        browserHistory.push('/' + username);
     }
 
     render() {
         return <div className="container">
             <h2>Bienvenidos al Explorador de Repos de GitHub</h2>
-            <input type="text" ref="input" placeholder={this.state.username + "/" + this.state.repo} onKeyUp={this.handleKeyEvent} />
-            <ListaMensajesCommit  username={this.state.username} repo={this.state.repo}/>
+            <form method="get" action="/" onSubmit={this.handleSubmit}>
+                <input type="text" ref="input" placeholder="Ingresar un usuario de GitHub y apretar enter" />
+            </form>
+            {this.props.children}
         </div>;
     }
 };
 
-render(<App />, document.getElementById('app'));
+App.childContextTypes = {params: React.PropTypes.object};
+
+render((
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <Route path=":username" component={ListaRepos} />
+            <Route path=":username/:repository" component={ListaMensajesCommit} />
+        </Route>
+    </Router>
+), document.getElementById('app'));
