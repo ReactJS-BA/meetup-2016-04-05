@@ -16,7 +16,7 @@ He vivido en Buenos Aires, Argentina durante los últimos 40 años con estadías
 
 ### Beneficios de React
 
-Se asume que los que estamos aquí ya conocemos bien los beneficios que nos da la utilización de React, probablemente integrada 
+Se asume que los que estamos aquí ya conocemos los beneficios que nos da la utilización de React, probablemente escrito en ES2015 (ES6), traspilado por Babel y concatenado automaticamente por algún "bundler", e integrada con alguna implementación de Flux, como Redux. Y esatmos entrando en este mundo feliz. 
 
 * Performance con DOM Virtual
 * Flujo unidireccional de datos y eventos a través de una jerarquía de componentes modulares con punto único de entrada (programación reactiva)
