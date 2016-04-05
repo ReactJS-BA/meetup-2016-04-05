@@ -60,5 +60,5 @@ Vemos rápidamente (pero quedamos con el repositorio y con el video) como sería
 
 Para eso, seguimos el estado de las cosas en cada PasoNN de los branches, comenzando con el branch (bifuración de Git) `paso01`. Cada branch tendrá documentado los pasos seguidos en, por ejemplo, `DOC01.md`.
 
-
+<small>[*Este tutorial basado en mis propios desarrollos y various tutoriales estándares de React y en la documentación de React, React Router y Redux. Ver [React Awesome](https://github.com/enaqx/awesome-react)]*</small>.
 
