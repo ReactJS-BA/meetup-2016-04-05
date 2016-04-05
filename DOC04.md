@@ -22,6 +22,6 @@ npm install -S react-router
     * agregar reducers para ADD_USER, LOAD_USER, y mantener LOAD_REPOSITORY 
 * actions
     * agregar acciones para ADD_USER, LOAD_USER
-
+* agregado logo
 
 

@@ -1,9 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import {Link, Router, Route, browserHistory} from 'react-router';
 import ListaRepos from './components/lista-repos';
 import ListaMensajesCommit from './components/lista-mensajes-commit';
 
+const Logo = () => <div className="logo col-sm-04"><Link to="/"><img src="public/images/logo.png" /></Link></div> 
 
 class App extends React.Component {
     constructor(props) {
@@ -23,11 +24,16 @@ class App extends React.Component {
 
     render() {
         return <div className="container">
-            <h2>Bienvenidos al Explorador de Repos de GitHub</h2>
-            <form method="get" action="/" onSubmit={this.handleSubmit}>
-                <input type="text" ref="input" placeholder="Ingresar un usuario de GitHub y apretar enter" />
-            </form>
-            {this.props.children}
+          <div className="row">
+            <Logo />
+            <div className="content col-sm-08">
+                <h2>Bienvenidos al Explorador de Repos de GitHub</h2>
+                <form method="get" action="/" onSubmit={this.handleSubmit}>
+                    <input type="text" ref="input" placeholder="Ingresar un usuario de GitHub y apretar enter" />
+                </form>
+                {this.props.children}
+            </div>
+          </div>
         </div>;
     }
 };
