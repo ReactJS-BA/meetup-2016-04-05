@@ -36,9 +36,11 @@ Ya nos está cansando la cabeza un poquito al solo escuchar eso. Es por la compl
 
 De aquí se desprende que el camino ha de simplificarse, para tomar pasos de bebe:
 
+* Aprender Javascript ES5 bien con, por ejemplo, [Eloquent Javascript](http://eloquentjavascript.net/) (empiezan a traducirlo a castellano [aquí](http://hectorip.github.io/Eloquent-JavaScript-ES-online/)) y por supuesto HTML5/CSS3 (y algo de SASS de la mano de Twitter Bootstrap por ejemplo).
+* Aprender algo de Git con el [Git Book](https://git-scm.com/book/en/v2) (parcialmente traducido a castellano [aquí](https://git-scm.com/book/es/v1))
+* Aprender algo de Node.js y su gestor de paquetes `npm` (Node Package Manager).
 * Entender como analizar una SPA (aplicación de una sola página) y someterlo a una desestructuración en sus partes, una jerarquía (como el DOM mismo) de componentes con [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html). Artículo viejo pero magistral que sin lugar a dudas es el punto de partida.
 * Aprender React y JSX (lenguaje tipo XML que define el DOM virtual del componente) con algún tutorial sencillo del tipo que podés ejecutar todo en Codepen o JSBin
-* Aprender algo de Node.js y su gestor de paquetes npm
 * Aprender los "bundlers" (herramientas de concatenación automáticas que permiten escribir modularmente pero consumir eficazmente su código)
 * Aprender ES6
 * Aprender Flux
@@ -46,16 +48,17 @@ De aquí se desprende que el camino ha de simplificarse, para tomar pasos de beb
 * Aprender rendering en el lado del servidor para lograr aplicaciones "universales" y amigables para SEO.
 * Aprender Immutable.js (menos bugs, mejor performance con el manejo de los datos en React).
 * Aprender Relay, Falcor, ....
+* Aprender cómo actualizar todo a cada rato mientras desarrollamos nuestras aplicaciones.
 
 y agregaría,
 
-* Alistarse en un año más o menos para ir a Typescript en vez de ES6. 
+* Alistarse en un año más o menos para ir a Typescript en vez de ES6... y andá saber más 
 
 ### Entonces, ¡hagamoslo ahora mismo!
 
 Vemos rápidamente (pero quedamos con el repositorio y con el video) como sería seguir estos pasos en una aplicación sencilla paso a paso.
 
-
+Para eso, seguimos el estado de las cosas en cada PasoNN de los branches, comenzando con el branch (bifuración de Git) `paso01`. Cada branch tendrá documentado los pasos seguidos en, por ejemplo, `DOC01.md`.
 
 
 
