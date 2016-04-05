@@ -1,2 +1,3 @@
 # meetup-2016-04-05
-Pendiente
+
+"El camino para dominar reactjs" (sin fatigarse en el intento)
