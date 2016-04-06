@@ -30,7 +30,8 @@ Se asume que los que estamos aquí ya conocemos los beneficios que nos da la uti
 
 Ya nos está cansando la cabeza un poquito al solo escuchar eso. Es por la complejidad de los requerimientos de hoy día, no es culpa de React Pero, ¿cómo abordarlo?
 
-* ["Aprender React me llena de tristeza"](https://cdn.rawgit.com/gaearon/react-makes-you-sad/1377b6a6cdc644adfea6bf238f06c75d33ed6f1e/fatigue.svg)
+* ["Aprender React me llena de tristeza"](https://cdn.rawgit.com/jvalen/react-makes-you-sad/e5fcd2062a9119427ccc890ddd30bb43f0d2f55f/fatigue.svg)
+    * [Versión original en inglés](https://cdn.rawgit.com/gaearon/react-makes-you-sad/1377b6a6cdc644adfea6bf238f06c75d33ed6f1e/fatigue.svg)
 * [react-howto](https://github.com/petehunt/react-howto)
 
 
