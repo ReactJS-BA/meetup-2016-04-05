@@ -1,10 +1,19 @@
 import React from 'react';
+import {Component} from 'react';
+
+/* Store / Actions */
 import store from '../store/store';
 import {addUser, loadUser} from '../store/actions';
+
+/* Import Components */
 import LinkRepo from './link-repo';
 
+/* Material-UI Components */
+import List from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
 
-class ListaRepos extends React.Component {
+class ListaRepos extends Component {
     constructor(props) {
         super(props);
         this.state = {repositories: []};
@@ -40,12 +49,14 @@ class ListaRepos extends React.Component {
     }
 
     render() {
-        return (<div id="repository-list">
-            <h1>Mostrando Repositorios a los cuales contribuye {this.props.params.username} </h1>
-            {this.state.repositories.map(function(repo, i) {
-                return <LinkRepo repo={repo} key={i} />;
-            })}
-        </div>);
+        return (
+            <List style={{ marginTop: 50 }}>
+                <Subheader>Repositorios a los cuales contribuyó <strong>@{this.props.params.username}</strong></Subheader>
+                {this.state.repositories.map(function(repo, i) {
+                    return <LinkRepo repo={repo} key={i} />;
+                })}
+            </List>
+        );
     }
 }
 

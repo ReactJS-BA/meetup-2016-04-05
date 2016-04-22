@@ -1,16 +1,24 @@
 import React from 'react';
+import {Component} from 'react';
 import {Link} from 'react-router';
 
+/* Material-UI Components */
+import List from 'material-ui/List';
+import ListItem from 'material-ui/List/ListItem';
+import Avatar from 'material-ui/Avatar';
+import FileFolder from 'material-ui/svg-icons/file/folder';
 
-class LinkRepo extends React.Component {
+class LinkRepo extends Component {
     render() {
         let url = this.props.repo.owner.login + '/' + this.props.repo.name;
         return (
-            <Link to={url} className="repo-link">
-                <h2>{url}</h2>
-                <p>{this.props.repo.description}</p>
-                <p><small>{this.props.repo.watchers_count} Watchers</small></p>
-            </Link>
+                <Link to={url}>
+                <ListItem
+                    leftAvatar={<Avatar icon={<FileFolder />} />}
+                    primaryText={url}
+                    secondaryText={this.props.repo.description}
+                />
+                </Link>
         );
     }
 };
