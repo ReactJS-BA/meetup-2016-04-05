@@ -1,9 +1,19 @@
 import React from 'react';
+import {Component} from 'react';
+
+/* Store / Actions */
 import store from '../store/store';
 import {addUser, loadRepository} from '../store/actions';
+
+/* Import Components */
 import MensajeCommit from './mensaje-commit';
 
-class ListaMensajesCommit extends React.Component {
+/* Material-UI Components */
+import List from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
+
+
+class ListaMensajesCommit extends Component {
     constructor(props) {
         super(props);
         this.state = {history: []};
@@ -35,12 +45,14 @@ class ListaMensajesCommit extends React.Component {
     }
 
     render() {
-        return <ul className="repository">
-            <h1>Mostrando Commits Recientes en {this.props.params.username}/{this.props.params.repository}</h1>
-            {this.state.history.map(function(commit, i) {
-                return <MensajeCommit commit={commit} key={i} />;
-            })}
-        </ul>;
+        return (
+            <List style={{ marginTop: 50 }}>
+                <Subheader>Mostrando <u>commits recientes</u> en <strong>{this.props.params.username}/{this.props.params.repository}</strong></Subheader>
+                {this.state.history.map(function(commit, i) {
+                        return <MensajeCommit commit={commit} key={i} />;
+                })}
+            </List>
+                );
     }
 };
 

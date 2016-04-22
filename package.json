@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/ReactJS-BA/meetup-2016-04-05#readme",
   "dependencies": {
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
+    "material-ui": "^0.15.0-beta.1",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
     "react-router": "^2.0.1",
+    "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.3.1",
     "redux-thunk": "^2.0.1"
   },
