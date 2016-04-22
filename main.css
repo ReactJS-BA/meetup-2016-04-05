@@ -1,17 +1,45 @@
-html, body { background: #f9f9f9; padding: 0; margin: 0; }
-body { border-top: 5px solid #307ace; }
-ul { list-style-type: none; padding: 0; margin: 0; }
-li { width: 90%; margin: 10px auto; background: #f7f7f7; border: 1px solid #307ace; border-radius: 4px; padding: 10px; }
-li img { border-radius: 2px; }
-input { padding: 10px; font-size: 16px; width: 90%; display: block; border: 1px solid #307ace; background: #fff; margin: 10px 10px auto; }
-.repo-link { display: block; width: 90%; margin: 10px auto; background: #fff; color: #307ace; text-decoration: none; padding: 10px; }
-h2, p { margin: 0; }
-.repo-link p { color: #333; font-family: Helvetica, arial, sans-serif; font-size: 14px; }
-.repo-link:hover { background: #f1f1f1; }
-small { color: #777; }
-h1 { text-align: center; color: #222; }
-.commit { background: #fff; }
-.commit img { float: left; margin-right: 10px; }
-.commit h2 { font-size: 16px; }
-.logo {padding: 10px;}
-.content h2 {margin-left: 10px;}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#app a:link, #app a:hover {
+  text-decoration: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 4em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .footer.fixed-bottom {
+    position: fixed;
+    z-index: -99;
+  }
+  .footer.fixed-bottom h6 {
+    margin-top: 0;
+  }
+}
